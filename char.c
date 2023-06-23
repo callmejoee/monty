@@ -24,3 +24,21 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", ch);
 }
+
+void pstr(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+{
+	char c;
+	char *str;
+	stack_t *current;
+
+	current = *stack;
+	str = "";
+
+	while(current != NULL || current->n != 0 || (current->n > 127 || current->n < 0))
+	{
+		c = current->n;
+		str += c;
+	}
+
+	printf("%s\n", str);
+}
