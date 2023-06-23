@@ -32,3 +32,16 @@ void pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 		current = current->next;
 	}
 }
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+
+	current = *stack;
+	if (current == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", current->n);
+}

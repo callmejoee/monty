@@ -8,6 +8,7 @@ instruction_t *get_op(char *line)
 	{
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
