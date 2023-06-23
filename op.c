@@ -12,6 +12,8 @@ instruction_t *get_op(char *line)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 
