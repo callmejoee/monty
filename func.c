@@ -72,13 +72,15 @@ char *parse_line(char *line,  unsigned int line_number)
 
 int is_digits(char *str)
 {
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        if (!isdigit(str[i]))
-        {
-            return 0;
-        }
-    }
+	int i;
 
-    return 1;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (!isdigit(str[i]))
+		{
+			return 0;
+		}
+	}
+
+	return 1;
 }

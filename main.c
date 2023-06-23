@@ -5,6 +5,7 @@ global_var data;
 int main(int argc, char *argv[])
 {
 	stack_t *stack;
+	stack_t *temp;
 
 	stack = NULL;
 
@@ -20,7 +21,6 @@ int main(int argc, char *argv[])
 
 	/* free stack */
 
-	stack_t *temp;
 
 	while (stack != NULL)
 	{
@@ -28,4 +28,5 @@ int main(int argc, char *argv[])
 		free(stack);
 		stack = temp;
 	}
+	return (0);
 }
