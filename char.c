@@ -2,28 +2,24 @@
 
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	char ch;
+    stack_t *current = *stack;
 
-	stack_t *current;
+    if (current == NULL)
+    {
+        fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+        exit(EXIT_FAILURE);
+    }
 
-	current = *stack;
+    if (!isascii(current->n))
+    {
+        fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+        exit(EXIT_FAILURE);
+    }
 
-	if (current == NULL)
-	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	if (current->n > 0 || current->n > 127)
-	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	ch = current->n;
-
-	printf("%c\n", ch);
+    putchar(current->n);
+    putchar('\n');
 }
+
 void pstr(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 {
     char c;
