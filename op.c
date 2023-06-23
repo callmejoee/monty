@@ -17,6 +17,7 @@ instruction_t *get_op(char *line)
 		{"div", division},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 
