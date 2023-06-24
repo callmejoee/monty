@@ -100,4 +100,44 @@ void mod(stack_t **stack, unsigned int line_number)
 
         (*stack)->n = sum;
 }
+void rotl(stack_t **stack, unsigned int line_number)
+{
+    stack_t *current = *stack;
+    int temp;
 
+    if (!line_number || !stack || !*stack || !(*stack)->next)
+        return;
+
+    temp = current->n;
+
+    while (current->next)
+    {
+        current = current->next;
+        current->prev->n = current->n;
+    }
+
+    current->n = temp;
+}
+
+
+void rotr(stack_t **stack, unsigned int line_number)
+{
+    stack_t *current = *stack;
+    int temp;
+
+    if (!line_number || !stack || !*stack || !(*stack)->next)
+        return;
+
+    while (current->next)
+        current = current->next;
+
+    temp = current->n;
+
+    while (current->prev)
+    {
+        current = current->prev;
+        current->next->n = current->n;
+    }
+
+    current->n = temp;
+}
